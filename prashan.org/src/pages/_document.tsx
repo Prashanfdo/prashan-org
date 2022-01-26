@@ -1,4 +1,4 @@
-import { Head, Html, Main, NextScript } from "next/document";
+import { Head, Html, Main, NextScript } from 'next/document';
 
 function Document() {
   return (
@@ -9,9 +9,7 @@ function Document() {
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
         <link rel="manifest" href="/favicon/site.webmanifest"></link>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#F8F8F8" />
-        <title>Prashan Fernando</title>
         <meta
           name="description"
           content="Fullstack Developer with 10+ years of experience, Certified Azure Architect with a passion for software development."
