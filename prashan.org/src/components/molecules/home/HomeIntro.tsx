@@ -18,7 +18,8 @@ function HomeIntro() {
           Prashan <br /> <span className="font-normal">Fernando</span>
         </h3>
         <p className="text-lg text-slate-500 mb-6">
-          Fullstack Developer with 10+ years of experience, Certified Azure Architect with a passion for software development.
+          Fullstack Developer with {new Date().getFullYear() - 2010}+ years of experience, Certified Azure Architect with a
+          passion for software development.
         </p>
 
         <SocialLinks />
