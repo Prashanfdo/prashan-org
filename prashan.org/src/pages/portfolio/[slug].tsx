@@ -1,5 +1,5 @@
 import SkillPill from 'components/atoms/SkillPill';
-import MainLayout from 'components/layouts/MainLayout';
+import CenteredLayout from 'components/layouts/CenteredLayout';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ArrowLeft } from 'react-feather';
@@ -16,7 +16,7 @@ function PortfolioSinglePage() {
   const handleRouteBack = () => router.back();
 
   return (
-    <div className="mt-4 px-4 md:px-10 md:h-full md:-mt-4 md:flex md:flex-col md:justify-center">
+    <div className="mt-4 px-6 md:px-10 md:h-full md:-mt-4 md:flex md:flex-col md:justify-center">
       <img
         className="w-full h-80 object-cover rounded overflow-hidden shadow-xl border"
         src={`/assets/images/portfolio/${images.split(',')[0]}`}
@@ -62,6 +62,6 @@ function PortfolioSinglePage() {
   );
 }
 
-PortfolioSinglePage.layout = MainLayout;
+PortfolioSinglePage.layout = CenteredLayout;
 
 export default PortfolioSinglePage;

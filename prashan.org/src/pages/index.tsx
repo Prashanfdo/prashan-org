@@ -1,15 +1,15 @@
 import Image from 'next/image';
-import MainLayout from 'components/layouts/MainLayout';
+import CenteredLayout from 'components/layouts/CenteredLayout';
 import HomeIntro from 'components/molecules/home/HomeIntro';
 
 function HomePage() {
   return (
-    <div className="flex items-center justify-center md:h-full">
+    <div className="md:-mt-16">
       <HomeIntro />
     </div>
   );
 }
 
-HomePage.layout = MainLayout;
+HomePage.layout = CenteredLayout;
 
 export default HomePage;

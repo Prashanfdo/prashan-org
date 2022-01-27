@@ -6,12 +6,12 @@ import SkillPill from 'components/atoms/SkillPill';
 
 function PortfolioPage() {
   return (
-    <div className="mt-4 md:mt-12 px-4 md:px-10">
+    <div className="max-w-screen-lg mx-auto pt-8 md:pt-20 pb-24 md:pb-10 lg:px-0 px-8 md:px-12">
       <div className="flex justify-between w-full items-center md:flex-row flex-col">
-        <h1 className="text-2xl flex-none font-bold font-display">Creative Portfolio</h1>
+        <h1 className="text-2xl flex-none font-bold font-display">Portfolio</h1>
         {/* <div className="flex-initial">AllUi/UxWebsiteGraphicCreative</div> */}
       </div>
-      <div className="grid grid-cols-2 gap-8 mt-12 mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 mb-16">
         {portfolioData.map(([title, images, skills], index) => (
           <Link passHref href={`/portfolio/${index + 1}`} key={index}>
             <a className="w-full h-full block transition-all hover:scale-110 active:scale-105 duration-200">

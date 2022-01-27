@@ -17,11 +17,10 @@ function HomeIntro() {
         <h3 className="font-display text-5xl md:text-6xl text-center md:text-left font-semibold leading-[1.05em] mb-8 mt-8 md:mt-2">
           Prashan <br /> <span className="font-normal">Fernando</span>
         </h3>
-        <p className="text-lg text-slate-500 mb-6">
+        <p className="text-lg text-slate-500 mb-6 text-center md:text-left">
           Fullstack Developer with {new Date().getFullYear() - 2010}+ years of experience, Certified Azure Architect with a
           passion for software development.
         </p>
-
         <SocialLinks />
       </div>
     </div>
@@ -35,7 +34,7 @@ const links: [Icon, string, string, boolean?][] = [
   [Linkedin, 'https://www.linkedin.com/in/prashanfdo/', 'Linkedin'],
   [Mail, 'mailto:prashanfdo@gmail.com', 'Email'],
   [Phone, 'tel:+94777301150', 'Phone', true],
-  [MessageCircle, 'https://wa.me/94777301150', 'WhatApp', true],
+  [MessageCircle, 'https://wa.me/94777301150', 'WhatsApp', true],
   [Twitter, 'https://twitter.com/@prashanfdo', 'Twitter'],
 ];
 

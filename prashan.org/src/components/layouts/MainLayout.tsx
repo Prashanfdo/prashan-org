@@ -12,21 +12,21 @@ function MainLayout({ children }: JSX.ElementChildrenAttribute): JSX.Element {
     [Mail, 'Contact', '/contact'],
   ];
   return (
-    <div className="flex min-h-screen flex-col md:flex-row">
+    <>
       <div
-        className="bg-white flex-none md:w-3/12 flex md:flex-col"
+        className="bg-white fixed top-0 md:w-80 w-full md:h-full flex md:flex-col z-10"
         style={{
           boxShadow: '0 0 30px rgb(62 68 125 / 8%)',
         }}
       >
         <div className="flex-auto flex md:flex-col justify-center items-center">
-          <div className="flex-auto flex flex-col md:justify-center md:w-[10ch] md:mr-1 font-display">
+          <div className="flex-auto flex flex-col md:justify-center md:w-[13ch] md:mr-1 font-display">
             <Link passHref href="/">
               <a>
                 <h6 className="text-3xl text-center py-4 md:text-lg md:mb-8 font-medium tracking-wider">Prashan Fernando</h6>
               </a>
             </Link>
-            <div className="flex md:block justify-around">
+            <div className="flex md:block justify-around fixed md:static w-full bottom-0 border-0 border-t md:border-t-0 border-t-[#ebebeb] border-solid">
               {navLinks.map(([icon, label, href], i) => (
                 <NavLink key={label} icon={icon} label={label} href={href} />
               ))}
@@ -39,15 +39,11 @@ function MainLayout({ children }: JSX.ElementChildrenAttribute): JSX.Element {
           </p>
         </footer>
       </div>
-      <main
-        style={{
-          borderLeft: '1px solid #ebebeb',
-        }}
-        className="flex-auto bg-[#f8f8f8]"
-      >
-        <div className="max-w-screen-lg mx-auto py-8 px-8 h-full">{children}</div>
+      <main className="g-[#f8f8f8] md:ml-80 pt-24 md:pt-0 border-0 md:border-l border-l-[#ebebeb] border-solid h-full">
+        {/* <div className="max-w-screen-lg mx-auto py-8 px-8 flex-auto">{children}</div> */}
+        {children}
       </main>
-    </div>
+    </>
   );
 }
 
@@ -67,26 +63,32 @@ const NavLink: React.FC<NavLinkProps> = ({ icon: Icon, label, href }: NavLinkPro
       <Link passHref href={href}>
         <a
           className={classnames(
-            'md:hidden flex-auto border-b-2 border-solid bg-slate-100 border-[#ebebeb] py-3 tracking-wide hover:tracking-widest transition-all duration-300 font-medium mb-3 text-slate-500 hover:text-slate-800 flex items-center justify-center',
+            'md:hidden flex-auto border-b-2 border-solid bg-white border-[#ebebeb] py-5 tracking-wide hover:tracking-widest transition-all duration-200 font-medium md:mb-3 text-slate-600 hover:text-slate-900 flex flex-col items-center justify-center group',
             {
-              'text-slate-800': isActive,
+              'text-slate-900': isActive,
             },
           )}
         >
           <Icon
             size={18}
-            className={classnames('transition-all duration-300 mr-2 mb-1 hover:scale-110', {
+            className={classnames('transition-all duration-200 mr-2 mb-1 group-hover:scale-125 group-active:!scale-105', {
               'scale-125': isActive,
             })}
           />
-          <span className="hidden md:inline">{label}</span>
         </a>
       </Link>
       <Link passHref href={href}>
-        <a className="hidden md:block py-3 tracking-wide hover:tracking-widest transition-all duration-300 font-medium mb-3 text-slate-500 hover:text-slate-800">
+        <a
+          className={classnames(
+            'hidden md:block py-3 tracking-wide hover:tracking-widest transition-all duration-300 font-medium mb-3 text-slate-500 hover:text-slate-900',
+            {
+              'text-slate-900': isActive,
+            },
+          )}
+        >
           <div className="flex items-center">
-            <Icon size={18} className="mr-3" />
-            <span className="hidden md:inline">{label}</span>
+            <Icon size={18} />
+            <span className="hidden md:inline ml-3">{label}</span>
           </div>
         </a>
       </Link>
