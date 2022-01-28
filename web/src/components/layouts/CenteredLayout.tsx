@@ -8,7 +8,7 @@ import MainLayout from './MainLayout';
 function CenteredLayout({ children }: JSX.ElementChildrenAttribute): JSX.Element {
   return (
     <MainLayout>
-      <div className="max-w-screen-lg mx-auto md:flex md:flex-col md:h-full justify-center md:pt-20 pb-20 md:pb-0">
+      <div className="lg:max-w-screen-lg md:max-w-screen-md max-w-screen-sm mx-auto md:flex md:flex-col md:h-full justify-center px-0 md:px-12 xl:px-0 md:pt-20 pb-20 md:pb-0">
         {children}
       </div>
     </MainLayout>

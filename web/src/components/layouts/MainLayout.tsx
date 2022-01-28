@@ -14,7 +14,7 @@ function MainLayout({ children }: JSX.ElementChildrenAttribute): JSX.Element {
   return (
     <>
       <div
-        className="bg-white fixed top-0 md:w-80 w-full md:h-full flex md:flex-col z-10"
+        className="bg-white fixed top-0 md:w-52 lg:w-80 w-full md:h-full flex md:flex-col z-10"
         style={{
           boxShadow: '0 0 30px rgb(62 68 125 / 8%)',
         }}
@@ -39,7 +39,7 @@ function MainLayout({ children }: JSX.ElementChildrenAttribute): JSX.Element {
           </p>
         </footer>
       </div>
-      <main className="g-[#f8f8f8] md:ml-80 pt-24 md:pt-0 border-0 md:border-l border-l-[#ebebeb] border-solid h-full">
+      <main className="g-[#f8f8f8] md:ml-52 lg:ml-80 pt-24 md:pt-0 border-0 md:border-l border-l-[#ebebeb] border-solid h-full">
         {/* <div className="max-w-screen-lg mx-auto py-8 px-8 flex-auto">{children}</div> */}
         {children}
       </main>
