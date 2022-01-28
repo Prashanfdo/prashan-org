@@ -1,0 +1,25 @@
+{
+  "name": "prashan-org",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "12",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.8.4",
+    "react-map-gl": "^6.1.16",
+    "react-modal": "^3.14.2",
+    "react-slick": "^0.28.1",
+    "react-tabs": "^3.2.2",
+    "simple-react-lightbox": "^3.6.6",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "sass": "^1.34.1"
+  }
+}

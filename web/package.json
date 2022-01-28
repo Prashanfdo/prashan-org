@@ -1,5 +1,5 @@
 {
-  "name": "prashan-org",
+  "name": "prashan.org",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,18 +8,17 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "12",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-hook-form": "^7.8.4",
-    "react-map-gl": "^6.1.16",
-    "react-modal": "^3.14.2",
-    "react-slick": "^0.28.1",
-    "react-tabs": "^3.2.2",
-    "simple-react-lightbox": "^3.6.6",
-    "slick-carousel": "^1.8.1"
+    "classnames": "^2.3.1",
+    "next": "12.0.8",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-feather": "^2.0.9"
   },
   "devDependencies": {
-    "sass": "^1.34.1"
+    "@types/react": "17.0.38",
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.16",
+    "typescript": "4.5.5"
   }
 }
