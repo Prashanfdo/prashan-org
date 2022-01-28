@@ -3,7 +3,7 @@ import CenteredLayout from 'components/layouts/CenteredLayout';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ArrowLeft } from 'react-feather';
-import portfolioData from './data';
+import portfolioData from 'data/portfolio/data';
 
 function PortfolioSinglePage() {
   const router = useRouter();

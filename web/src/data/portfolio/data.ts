@@ -5,12 +5,12 @@ const data: [title: string, images: string, skills: string, description: string,
     'API,Web Application,API Integration,Web Development,Responsive Design',
     'A job posting website to post jobs. Stripe is integrated to receive payments.',
     `
-    Full Stack Development Deliverables:API,Web Application,API Integration,Web Development,Responsive Design;
-    Full Stack Development Skills:React,Node.js,MUI,Docker;
-    Full Stack Development Languages:JavaScript,TypeScript;
-    Databases:MongoDB;
-    Web Servers:NGINX;
-    `,
+      Full Stack Development Deliverables:API,Web Application,API Integration,Web Development,Responsive Design;
+      Full Stack Development Skills:React,Node.js,MUI,Docker;
+      Full Stack Development Languages:JavaScript,TypeScript;
+      Databases:MongoDB;
+      Web Servers:NGINX;
+      `,
   ],
   [
     'CircleOp : Tool for make Meetings efficient',
@@ -18,10 +18,10 @@ const data: [title: string, images: string, skills: string, description: string,
     'Web Application,Web Development,Responsive Design',
     'Tool for make Meetings efficient',
     `
-    Full Stack Development Deliverables:Web Application,Web Development,Responsive Design;
-    Full Stack Development Skills:React,Node.js,MUI,Docker,Redux;
-    Full Stack Development Languages:JavaScript;
-    `,
+      Full Stack Development Deliverables:Web Application,Web Development,Responsive Design;
+      Full Stack Development Skills:React,Node.js,MUI,Docker,Redux;
+      Full Stack Development Languages:JavaScript;
+      `,
   ],
   [
     'Everyname : Online Souvenir Shop US/Canada',
@@ -29,10 +29,10 @@ const data: [title: string, images: string, skills: string, description: string,
     'Web Application,Web Development,Responsive Design',
     'Online souvenir shop for US and UK tourists',
     `
-    Full Stack Development Deliverables:Web Application,Web Development,Responsive Design,Ecommerce Website;
-    Full Stack Development Skills:React,Node.js,eCommerce,MUI,Next.js,Docker;
-    Full Stack Development Languages:JavaScript;
-    `,
+      Full Stack Development Deliverables:Web Application,Web Development,Responsive Design,Ecommerce Website;
+      Full Stack Development Skills:React,Node.js,eCommerce,MUI,Next.js,Docker;
+      Full Stack Development Languages:JavaScript;
+      `,
   ],
 ];
 

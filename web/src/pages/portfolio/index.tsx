@@ -1,6 +1,6 @@
 import MainLayout from 'components/layouts/MainLayout';
 import Image from 'next/image';
-import portfolioData from './data';
+import portfolioData from 'data/portfolio/data';
 import Link from 'next/link';
 import SkillPill from 'components/atoms/SkillPill';
 
