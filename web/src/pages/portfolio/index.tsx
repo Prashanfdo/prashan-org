@@ -9,7 +9,6 @@ function PortfolioPage() {
     <div className="max-w-screen-lg mx-auto pt-8 md:pt-20 pb-24 md:pb-10 lg:px-0 px-8 md:px-12">
       <div className="flex justify-between w-full items-center md:flex-row flex-col">
         <h1 className="text-2xl flex-none font-bold font-display">Portfolio</h1>
-        {/* <div className="flex-initial">AllUi/UxWebsiteGraphicCreative</div> */}
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 mb-16">
         {portfolioData.map(([title, images, skills], index) => (
@@ -24,11 +23,11 @@ function PortfolioPage() {
                 <div className="px-6 pt-4 pb-3">
                   <div className="font-bold text-xl mb-2">{title}</div>
                 </div>
-                <div className="px-6 pt-2 mb-4">
+                {/* <div className="px-6 pt-2 mb-4">
                   {skills?.split(',').map((skill) => (
                     <SkillPill key={skill} skill={skill} />
                   ))}
-                </div>
+                </div> */}
               </div>
             </a>
           </Link>

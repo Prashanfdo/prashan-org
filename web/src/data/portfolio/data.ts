@@ -5,11 +5,9 @@ const data: [title: string, images: string, skills: string, description: string,
     'API,Web Application,API Integration,Web Development,Responsive Design',
     'A job posting website to post jobs. Stripe is integrated to receive payments.',
     `
-      Full Stack Development Deliverables:API,Web Application,API Integration,Web Development,Responsive Design;
-      Full Stack Development Skills:React,Node.js,MUI,Docker;
-      Full Stack Development Languages:JavaScript,TypeScript;
-      Databases:MongoDB;
-      Web Servers:NGINX;
+      Frontend Tech:Next.JS, React, Axios, Redux, MUI, Node.JS;
+      Languages: JavaScript, Html, CSS, SASS;
+      Hosting:AWS, Docker, NGINX;
       `,
   ],
   [
@@ -18,9 +16,9 @@ const data: [title: string, images: string, skills: string, description: string,
     'Web Application,Web Development,Responsive Design',
     'Tool for make Meetings efficient',
     `
-      Full Stack Development Deliverables:Web Application,Web Development,Responsive Design;
-      Full Stack Development Skills:React,Node.js,MUI,Docker,Redux;
-      Full Stack Development Languages:JavaScript;
+      Frontend Tech:Next.JS, React, Redux, MUI, Node.JS;
+      Languages: JavaScript, TypeScript, Html, CSS, SASS;
+      Hosting:AWS, Docker;
       `,
   ],
   [
@@ -29,9 +27,20 @@ const data: [title: string, images: string, skills: string, description: string,
     'Web Application,Web Development,Responsive Design',
     'Online souvenir shop for US and UK tourists',
     `
-      Full Stack Development Deliverables:Web Application,Web Development,Responsive Design,Ecommerce Website;
-      Full Stack Development Skills:React,Node.js,eCommerce,MUI,Next.js,Docker;
-      Full Stack Development Languages:JavaScript;
+      Frontend Tech:Next.JS, React, React Context & Hooks, Node.JS;
+      Languages: JavaScript, TypeScript, Html, CSS, SASS;
+      Hosting:AWS, Docker;
+      `,
+  ],
+  [
+    'Fydcoin : A digital currency similar to Bitcoin',
+    '4-1.jpg,4-2.jpg,4-3.jpg,4-4.jpg',
+    'Next.JS, Vercel',
+    'FYDcoin is a digital currency similar to Bitcoin that can be stored safely on any PC or laptop.',
+    `
+      Frontend Tech:Next.JS, React, React Context & Hooks, Node.JS;
+      Languages: JavaScript, TypeScript, Html, CSS, SASS;
+      Hosting:Vercel;
       `,
   ],
 ];
