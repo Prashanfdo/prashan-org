@@ -65,7 +65,7 @@ const NavLink: React.FC<NavLinkProps> = ({ icon: Icon, label, href }: NavLinkPro
           className={classnames(
             'md:hidden flex-auto border-b-2 border-solid bg-white border-[#ebebeb] py-5 tracking-wide hover:tracking-widest transition-all duration-200 font-medium md:mb-3 text-slate-600 hover:text-slate-900 flex flex-col items-center justify-center group',
             {
-              'text-slate-900': isActive,
+              '!text-slate-900': isActive,
             },
           )}
         >
@@ -82,7 +82,8 @@ const NavLink: React.FC<NavLinkProps> = ({ icon: Icon, label, href }: NavLinkPro
           className={classnames(
             'hidden md:block py-3 tracking-wide hover:tracking-widest transition-all duration-300 font-medium mb-3 text-slate-500 hover:text-slate-900',
             {
-              'text-slate-900': isActive,
+              '!font-semibold': isActive,
+              '!text-slate-900': isActive,
             },
           )}
         >
