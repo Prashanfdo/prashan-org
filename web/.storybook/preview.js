@@ -56,6 +56,7 @@ const customViewports = {
 };
 
 export const parameters = {
+  viewMode: 'docs',
   viewport: {
     viewports: {
       ...customViewports,

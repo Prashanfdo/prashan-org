@@ -12,12 +12,12 @@ html,body,#__next{
     -moz-osx-font-smoothing: auto;
 }
 @media (min-width: 768px){ 
-    #root {
+    #__next {
         margin-left: 13rem;
     }
 } 
 @media (min-width: 1024px){ 
-    #root {
+    #__next {
         margin-left: 20rem;
     }
 } 

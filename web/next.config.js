@@ -1,3 +1,11 @@
 module.exports = {
-    swcMinify: true,
+    swcMinify: true, 
+    async rewrites() {
+        return [
+            {
+                source: '/',
+                destination: '/home',
+            },
+        ]
+    },
 }

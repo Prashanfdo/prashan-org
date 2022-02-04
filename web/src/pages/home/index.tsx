@@ -1,7 +1,7 @@
 import CenteredLayout from 'components/layouts/CenteredLayout';
 import HomeIntro from 'components/molecules/home/HomeIntro';
 
-function HomePage() {
+export function HomePage() {
   return (
     <div className="md:-mt-16">
       <HomeIntro />

@@ -9,7 +9,7 @@ function HomeIntro() {
         <div
           className={`w-[300px]  h-[300px] bg-cover bg-center grayscale-[90%] transition-all duration-200 hover:grayscale-[50%] ${HomeIntroStyles.animated_bubble}`}
           style={{
-            backgroundImage: 'url(assets/images/prashan.jpg)',
+            backgroundImage: 'url(/assets/images/prashan.jpg)',
           }}
         ></div>
       </div>

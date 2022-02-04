@@ -10,6 +10,7 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "storybook-addon-next-router",
+    "storybook-css-modules-preset",
     {
       name: '@storybook/addon-postcss',
       options: {
@@ -19,6 +20,7 @@ module.exports = {
       },
     },
   ],
+  "staticDirs": ['../public'],
   "framework": "@storybook/react",
   "core": {
     "builder": "webpack5"

@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   useEffect(() => {
     const handleRouteChange = (url: string) => {
-      (window as any)?.gtag('config', process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS, {
+      (window as any)?.gtag?.('config', process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS, {
         page_path: url,
       });
     };
