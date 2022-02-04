@@ -2,7 +2,9 @@ import classnames from 'classnames';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { Home, Icon, Mail, Tv, User } from 'react-feather';
+import {
+  Home, Icon, Mail, Tv, User,
+} from 'react-feather';
 
 function MainLayout({ children }: JSX.ElementChildrenAttribute): JSX.Element {
   const navLinks: [Icon, string, string][] = [
@@ -35,7 +37,11 @@ function MainLayout({ children }: JSX.ElementChildrenAttribute): JSX.Element {
         </div>
         <footer className="flex-none hidden md:block">
           <p className="italic py-4 px-4 text-slate-500 text-xs">
-            &copy; {new Date().getFullYear()} Prashan Fernando. All rights reserved.
+            &copy;
+            {' '}
+            {new Date().getFullYear()}
+            {' '}
+            Prashan Fernando. All rights reserved.
           </p>
         </footer>
       </div>

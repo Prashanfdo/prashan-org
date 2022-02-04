@@ -1,5 +1,7 @@
 import React from 'react';
-import { GitHub, Icon, Linkedin, Mail, MessageCircle, Phone, Twitter } from 'react-feather';
+import {
+  GitHub, Icon, Linkedin, Mail, MessageCircle, Phone, Twitter,
+} from 'react-feather';
 
 const links: [icon: Icon, link: string, label: string, display: string, openInSameTab?: boolean][] = [
   [Mail, 'mailto:prashanfdo@gmail.com', 'Email', 'prashanfdo@gmail.com'],
@@ -10,7 +12,7 @@ const links: [icon: Icon, link: string, label: string, display: string, openInSa
   [Twitter, 'https://twitter.com/@prashanfdo', 'Twitter', '@prashanfdo'],
 ];
 
-const SocialLinks = () => {
+function SocialLinks() {
   return (
     <div className="mt-10">
       {links.map(([Icon, link, label, display, openInSameTab], i) => (
@@ -26,6 +28,6 @@ const SocialLinks = () => {
       ))}
     </div>
   );
-};
+}
 
 export default SocialLinks;

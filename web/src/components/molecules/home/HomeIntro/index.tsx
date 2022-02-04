@@ -1,6 +1,8 @@
-import HomeIntroStyles from './HomeIntro.module.css';
-import { GitHub, Linkedin, Mail, MessageCircle, Phone, Twitter } from 'react-feather';
+import {
+  GitHub, Linkedin, Mail, MessageCircle, Phone, Twitter,
+} from 'react-feather';
 import type { Icon } from 'react-feather';
+import HomeIntroStyles from './HomeIntro.module.css';
 
 function HomeIntro() {
   return (
@@ -11,14 +13,21 @@ function HomeIntro() {
           style={{
             backgroundImage: 'url(/assets/images/prashan.jpg)',
           }}
-        ></div>
+        />
       </div>
       <div>
         <h3 className="font-display text-5xl md:text-6xl text-center md:text-left font-semibold leading-[1.05em] mb-8 mt-8 md:mt-2">
-          Prashan <br /> <span className="font-normal">Fernando</span>
+          Prashan
+          {' '}
+          <br />
+          {' '}
+          <span className="font-normal">Fernando</span>
         </h3>
         <p className="text-lg text-slate-500 mb-6 text-center md:text-left">
-          Fullstack Developer with {new Date().getFullYear() - 2010}+ years of experience, Certified Azure Architect with a
+          Fullstack Developer with
+          {' '}
+          {new Date().getFullYear() - 2010}
+          + years of experience, Certified Azure Architect with a
           passion for software development.
         </p>
         <SocialLinks />
@@ -38,7 +47,7 @@ const links: [Icon, string, string, boolean?][] = [
   [Twitter, 'https://twitter.com/@prashanfdo', 'Twitter'],
 ];
 
-const SocialLinks = () => {
+function SocialLinks() {
   return (
     <div className="flex justify-center md:justify-start mt-20 md:mt-4">
       {links.map(([Icon, link, tooltip, openInSameTab], i) => (
@@ -55,4 +64,4 @@ const SocialLinks = () => {
       ))}
     </div>
   );
-};
+}

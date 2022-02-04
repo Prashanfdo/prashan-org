@@ -12,8 +12,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         page_path: url,
       });
     };
-    //When the component is mounted, subscribe to router changes
-    //and log those page views
+    // When the component is mounted, subscribe to router changes
+    // and log those page views
     router.events.on('routeChangeComplete', handleRouteChange);
 
     // If the component is unmounted, unsubscribe

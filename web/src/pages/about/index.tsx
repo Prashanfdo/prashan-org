@@ -22,8 +22,8 @@ export default AboutPage;
 function InfoGrid() {
   const data = [
     `Experience:${new Date().getFullYear() - 2010}+ years in Software Development`,
-    `Designation:Senior Tech Lead`,
-    `Work:Wollastra Tech`,
+    'Designation:Senior Tech Lead',
+    'Work:Wollastra Tech',
     'Education:MSc. in Enterprise Application Development',
     'Study:Sheffield Hallam University',
     'Location:Colombo, Sri Lanka',

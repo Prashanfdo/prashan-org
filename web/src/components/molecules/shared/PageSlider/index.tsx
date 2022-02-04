@@ -4,7 +4,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-const PageSlider = ({ images }: { images: string[] }) => {
+function PageSlider({ images }: { images: string[] }) {
   return (
     <div>
       <Swiper
@@ -23,6 +23,6 @@ const PageSlider = ({ images }: { images: string[] }) => {
       </Swiper>
     </div>
   );
-};
+}
 
 export default PageSlider;
