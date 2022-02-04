@@ -5,11 +5,22 @@
 
 html,body,#__next{
     height: 100%;
+    background: #f8f8f8;
     font-family: Mulish, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue;
     -webkit-font-smoothing: auto;
     -moz-osx-font-smoothing: auto;
 }
+@media (min-width: 768px){ 
+    #root {
+        margin-left: 13rem;
+    }
+} 
+@media (min-width: 1024px){ 
+    #root {
+        margin-left: 20rem;
+    }
+} 
 
 .page-slider { 
     padding-left: 60px !important; 

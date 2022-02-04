@@ -1,3 +1,16 @@
 .sb-show-main.sb-main-padded{
     padding: 0;
 }
+#root{
+    height: 100%;
+}
+@media (min-width: 768px){ 
+    #root {
+        margin-left: 13rem;
+    }
+} 
+@media (min-width: 1024px){ 
+    #root {
+        margin-left: 20rem;
+    }
+} 

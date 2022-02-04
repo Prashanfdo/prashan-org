@@ -10,7 +10,57 @@ Object.defineProperty(NextImage, 'default', {
   value: (props) => <OriginalNextImage {...props} unoptimized />,
 });
 
+const customViewports = {
+  xs: {
+    name: "XS",
+    styles: {
+      width: "480px",
+      height: "600px",
+    },
+  },
+  s: {
+    name: "S",
+    styles: {
+      width: "640px",
+      height: "600px",
+    },
+  },
+  m: {
+    name: "M",
+    styles: {
+      width: "960px",
+      height: "600px",
+    },
+  },
+  l: {
+    name: "L",
+    styles: {
+      width: "1200px",
+      height: "600px",
+    },
+  },
+  xl: {
+    name: "XL",
+    styles: {
+      width: "1400px",
+      height: "600px",
+    },
+  },
+  "2xl": {
+    name: "2XL",
+    styles: {
+      width: "2400px",
+      height: "600px",
+    },
+  },
+};
+
 export const parameters = {
+  viewport: {
+    viewports: {
+      ...customViewports,
+    },
+  },
   nextRouter: {
     Provider: RouterContext.Provider,
   },
