@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import CenteredLayout from 'components/layouts/CenteredLayout';
 import HomeIntro from 'components/molecules/home/HomeIntro';
 
