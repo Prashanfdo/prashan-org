@@ -24,9 +24,10 @@ function Document() {
         />
         <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -34,8 +35,9 @@ function Document() {
               page_path: window.location.pathname,
             });
           `,
-          }}
-        />
+            }}
+          />
+        )}
       </Head>
       <body>
         <Main />
