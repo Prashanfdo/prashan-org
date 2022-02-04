@@ -1,6 +1,4 @@
-import {
-  GitHub, Linkedin, Mail, MessageCircle, Phone, Twitter,
-} from 'react-feather';
+import { GitHub, Linkedin, Mail, MessageCircle, Phone, Twitter } from 'react-feather';
 import type { Icon } from 'react-feather';
 import HomeIntroStyles from './HomeIntro.module.css';
 
@@ -17,17 +15,10 @@ function HomeIntro() {
       </div>
       <div>
         <h3 className="font-display text-5xl md:text-6xl text-center md:text-left font-semibold leading-[1.05em] mb-8 mt-8 md:mt-2">
-          Prashan
-          {' '}
-          <br />
-          {' '}
-          <span className="font-normal">Fernando</span>
+          Prashan <br /> <span className="font-normal">Fernando</span>
         </h3>
         <p className="text-lg text-slate-500 mb-6 text-center md:text-left">
-          Fullstack Developer with
-          {' '}
-          {new Date().getFullYear() - 2010}
-          + years of experience, Certified Azure Architect with a
+          Fullstack Developer with {new Date().getFullYear() - 2010}+ years of experience, Certified Azure Architect with a
           passion for software development.
         </p>
         <SocialLinks />

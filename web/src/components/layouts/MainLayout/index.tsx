@@ -2,9 +2,7 @@ import classnames from 'classnames';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
-import {
-  Home, Icon, Mail, Tv, User,
-} from 'react-feather';
+import { Home, Icon, Mail, Tv, User } from 'react-feather';
 
 function MainLayout({ children }: JSX.ElementChildrenAttribute): JSX.Element {
   const navLinks: [Icon, string, string][] = [
@@ -29,7 +27,7 @@ function MainLayout({ children }: JSX.ElementChildrenAttribute): JSX.Element {
               </a>
             </Link>
             <div className="flex md:block justify-around fixed md:static w-full bottom-0 border-0 border-t md:border-t-0 border-t-[#ebebeb] border-solid">
-              {navLinks.map(([icon, label, href], i) => (
+              {navLinks.map(([icon, label, href]) => (
                 <NavLink key={label} icon={icon} label={label} href={href} />
               ))}
             </div>
@@ -37,11 +35,7 @@ function MainLayout({ children }: JSX.ElementChildrenAttribute): JSX.Element {
         </div>
         <footer className="flex-none hidden md:block">
           <p className="italic py-4 px-4 text-slate-500 text-xs">
-            &copy;
-            {' '}
-            {new Date().getFullYear()}
-            {' '}
-            Prashan Fernando. All rights reserved.
+            &copy; {new Date().getFullYear()} Prashan Fernando. All rights reserved.
           </p>
         </footer>
       </div>
@@ -58,7 +52,7 @@ type NavLinkProps = {
   label: string;
 };
 
-const NavLink: React.FC<NavLinkProps> = ({ icon: Icon, label, href }: NavLinkProps) => {
+function NavLink({ icon: IconEl, label, href }: NavLinkProps) {
   const router = useRouter();
   const isActive = router.pathname === href;
   return (
@@ -72,7 +66,7 @@ const NavLink: React.FC<NavLinkProps> = ({ icon: Icon, label, href }: NavLinkPro
             },
           )}
         >
-          <Icon
+          <IconEl
             size={18}
             className={classnames('transition-all duration-200 mr-2 mb-1 group-hover:scale-125 group-active:!scale-105', {
               'scale-125': isActive,
@@ -91,11 +85,11 @@ const NavLink: React.FC<NavLinkProps> = ({ icon: Icon, label, href }: NavLinkPro
           )}
         >
           <div className="flex items-center">
-            <Icon size={18} />
+            <IconEl size={18} />
             <span className="hidden md:inline ml-3">{label}</span>
           </div>
         </a>
       </Link>
     </>
   );
-};
+}

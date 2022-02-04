@@ -1,5 +1,4 @@
 import CenteredLayout from 'components/layouts/CenteredLayout';
-import Image from 'next/image';
 import React from 'react';
 
 function AboutPage() {

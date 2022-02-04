@@ -1,10 +1,10 @@
 import SkillPill from 'components/atoms/SkillPill';
 import MainLayout from 'components/layouts/MainLayout';
+import PageSlider from 'components/molecules/shared/PageSlider';
+import portfolioData from 'data/portfolio/data';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ArrowLeft } from 'react-feather';
-import portfolioData from 'data/portfolio/data';
-import PageSlider from 'components/molecules/shared/PageSlider';
 
 function PortfolioSinglePage() {
   const router = useRouter();
@@ -12,9 +12,7 @@ function PortfolioSinglePage() {
     return null;
   }
 
-  const [title, images, skills, description, allSkills] = portfolioData[parseInt(router.query.slug as string) - 1];
-
-  const handleRouteBack = () => router.back();
+  const [title, images, , description, allSkills] = portfolioData[parseInt(router.query.slug as string) - 1];
 
   return (
     <div className="max-w-screen-lg mx-auto pt-8 md:pt-20 pb-24 md:pb-10 lg:px-0 px-8 md:px-12">
@@ -22,10 +20,7 @@ function PortfolioSinglePage() {
         <PageSlider images={images.split(',').map((i) => `/assets/images/portfolio/${i}`)} />
         <div>
           <Link passHref href="/portfolio">
-            <a
-              className="uppercase font-semibold text-slate-400 hover:text-slate-500 active:text-slate-500 text-xs md:text-sm inline-flex gap-1 mt-10 mb-3 group"
-              onClick={handleRouteBack}
-            >
+            <a className="uppercase font-semibold text-slate-400 hover:text-slate-500 active:text-slate-500 text-xs md:text-sm inline-flex gap-1 mt-10 mb-3 group">
               <ArrowLeft
                 size={16}
                 className="ml-auto group-hover:translate-x-[-2px] ease-in duration-100 flex items-center flex-shrink-0"
