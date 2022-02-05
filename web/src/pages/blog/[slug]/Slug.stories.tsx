@@ -16,6 +16,9 @@ export default {
     nextRouter: {
       path: '/blog/[slug]',
       asPath: '/blog/1',
+      query: {
+        slug: '1',
+      },
     },
   },
 } as any;

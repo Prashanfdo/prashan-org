@@ -15,7 +15,7 @@ function BlogPage({ posts }: BlogPageProps) {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 pb-16">
         {posts.map((post) => (
-          <Link passHref href={`/portfolio/${post.slug}`} key={post.slug}>
+          <Link passHref href={`/blog/${post.slug}`} key={post.slug}>
             <a className="w-full h-full block transition-all hover:scale-105 active:scale-105 duration-200">
               <div className="h-full rounded overflow-hidden shadow-2xl">
                 <Image

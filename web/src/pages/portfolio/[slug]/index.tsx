@@ -2,9 +2,7 @@ import SkillPill from 'components/atoms/SkillPill';
 import MainLayout from 'components/layouts/MainLayout';
 import PageSlider from 'components/molecules/shared/PageSlider';
 import portfolioData from 'data/portfolio/data';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { ArrowLeft } from 'react-feather';
 
 function PortfolioSinglePage() {
   const router = useRouter();
