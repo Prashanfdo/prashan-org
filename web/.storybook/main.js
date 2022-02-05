@@ -32,6 +32,10 @@ module.exports = {
       path.resolve(__dirname, "../src"),
       'node_modules'
     ];
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'fs': path.resolve(__dirname, 'mock-fs.js')
+    };
     return config;
   },
 }

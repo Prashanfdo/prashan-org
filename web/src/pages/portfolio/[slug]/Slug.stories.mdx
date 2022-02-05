@@ -8,6 +8,13 @@ import Page from '.';
     previewTabs: {
       'storybook/docs/panel': { hidden: true },
     },
+    nextRouter: {
+      path: '/portfolio/[slug]',
+      asPath: '/profile/1',
+      query: {
+        slug: '1',
+      },
+    },
   }}
 />
 
@@ -15,8 +22,10 @@ import Page from '.';
 
 <Canvas>
   <Story name="Default">
-    <Page.layout>
-      <Page />
-    </Page.layout>
+    <div id="__next">
+      <Page.layout>
+        <Page />
+      </Page.layout>
+    </div>
   </Story>
 </Canvas>

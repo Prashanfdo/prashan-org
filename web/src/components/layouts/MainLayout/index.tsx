@@ -2,13 +2,14 @@ import classnames from 'classnames';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { Home, Icon, Mail, Tv, User } from 'react-feather';
+import { Home, Icon, Mail, Tv, User, Book } from 'react-feather';
 
 function MainLayout({ children }: JSX.ElementChildrenAttribute): JSX.Element {
   const navLinks: [Icon, string, string][] = [
     [Home, 'Home', '/'],
     [User, 'About', '/about'],
     [Tv, 'Portfolio', '/portfolio'],
+    [Book, 'Blog', '/blog'],
     [Mail, 'Contact', '/contact'],
   ];
   return (
