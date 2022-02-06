@@ -15,7 +15,7 @@ function MainLayout({ children }: JSX.ElementChildrenAttribute): JSX.Element {
   return (
     <>
       <div
-        className="bg-white fixed top-0 md:w-52 lg:w-80 w-full md:h-full flex md:flex-col z-10 border-0 md:border-r border-r-[#ebebeb] border-solid left-0"
+        className="bg-red-600 fixed top-0 md:w-52 lg:w-80 w-full md:h-full flex md:flex-col z-10 border-0 md:border-r border-r-[#ebebeb] border-solid left-0"
         style={{
           boxShadow: '0 0 30px rgb(62 68 125 / 8%)',
         }}
