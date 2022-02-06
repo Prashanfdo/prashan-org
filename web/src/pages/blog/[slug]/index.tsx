@@ -48,26 +48,26 @@ PortfolioSinglePage.layout = MainLayout;
 
 export default PortfolioSinglePage;
 
-// export async function getStaticProps(context: { params: Pick<BlogPost, 'slug'> }) {
-//   const { params } = context;
+export async function getStaticProps(context: { params: Pick<BlogPost, 'slug'> }) {
+  const { params } = context;
 
-//   const allPosts = getAllPosts();
+  const allPosts = getAllPosts();
 
-//   const post = allPosts.find((i) => i.slug === params.slug);
-//   if (post) {
-//     post.content = (await renderToString(post.content)) as unknown as string;
-//   }
+  const post = allPosts.find((i) => i.slug === params.slug);
+  if (post) {
+    post.content = (await renderToString(post.content)) as unknown as string;
+  }
 
-//   return {
-//     props: {
-//       post,
-//     },
-//   };
-// }
+  return {
+    props: {
+      post,
+    },
+  };
+}
 
-// export async function getStaticPaths() {
-//   const allPosts = getAllPosts();
+export async function getStaticPaths() {
+  const allPosts = getAllPosts();
 
-//   const paths = allPosts.map((post) => ({ params: { slug: post.slug } }));
-//   return { paths, fallback: false };
-// }
+  const paths = allPosts.map((post) => ({ params: { slug: post.slug } }));
+  return { paths, fallback: false };
+}
