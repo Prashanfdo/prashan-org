@@ -8,7 +8,7 @@ export type BlogPost = {
   content: string;
   slug: string;
   data: {
-    draft?: boolean;
+    draft: boolean;
     title: string;
     date: string;
     image: string;
@@ -22,8 +22,11 @@ export default function getAllPosts() {
     .map((fileName) => {
       const slug = fileName.replace('.md', '');
       const fileContents = fs.readFileSync(path.join(contentDirectory, fileName), 'utf8');
-      const { data, content } = matter(fileContents);
-      const blogPost: BlogPost = { content, data: { ...data, date: new Date(data.date).toISOString() }, slug };
+      const {
+        data: { draft, date, image, title },
+        content,
+      } = matter(fileContents);
+      const blogPost: BlogPost = { content, data: { draft: !!draft, image, title, date: new Date(date).toISOString() }, slug };
       return blogPost;
     })
     .filter((i) => i.data.draft !== true)

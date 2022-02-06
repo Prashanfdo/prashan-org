@@ -1,6 +1,6 @@
 import React from 'react';
-import type { PortfolioSinglePageProps } from '.';
-import Page from '.';
+import type { PortfolioSinglePageProps } from 'pages/blog/[slug]';
+import Page from 'pages/blog/[slug]';
 
 const Layout = Page.layout;
 

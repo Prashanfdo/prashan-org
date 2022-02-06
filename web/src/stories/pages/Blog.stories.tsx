@@ -1,7 +1,7 @@
 import { ComponentMeta } from '@storybook/react';
 import React from 'react';
-import Page from '.';
-import type { BlogPageProps } from './index';
+import Page from 'pages/blog';
+import type { BlogPageProps } from 'pages/blog';
 
 const Layout = Page.layout;
 
