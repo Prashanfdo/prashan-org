@@ -9,6 +9,10 @@ module.exports = {
                 source: '/',
                 destination: '/home',
             },
+            {
+                source: '/blog/feed.xml',
+                destination: '/api/blog/feed.xml',
+            },
         ]
     },
 }
