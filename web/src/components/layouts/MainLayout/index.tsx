@@ -56,7 +56,8 @@ type NavLinkProps = {
 
 function NavLink({ icon: IconEl, label, href }: NavLinkProps) {
   const router = useRouter();
-  const isActive = href === '/' ? router.asPath === href : router.asPath.startsWith(href);
+  const path = router.pathname === '/home' ? '/' : router.pathname;
+  const isActive = href === '/' ? path === href : path.startsWith(href);
   return (
     <>
       <Link passHref href={href}>
