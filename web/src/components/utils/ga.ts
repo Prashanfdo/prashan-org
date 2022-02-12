@@ -68,7 +68,7 @@ export function useGAPageTrack() {
   // track page scrolls rounded to 25% of page height
   useEffect(() => {
     const onScroll = () => {
-      setScrollDepth(Math.round(((window.pageYOffset + window.innerHeight) * 100) / (document.body.scrollHeight * 25)) * 25);
+      // setScrollDepth(Math.round(((window.pageYOffset + window.innerHeight) * 100) / (document.body.scrollHeight * 25)) * 25);
     };
     window.removeEventListener('scroll', onScroll);
     window.addEventListener('scroll', onScroll, { passive: true });
