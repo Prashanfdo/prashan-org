@@ -5,7 +5,6 @@ import { format, parseISO } from 'date-fns';
 import hydrate from 'next-mdx-remote/hydrate';
 import renderToString from 'next-mdx-remote/render-to-string';
 import Head from 'next/head';
-import image from 'next/image';
 import Image from 'next/image';
 import Link from 'next/link';
 import SlugStyles from './Slug.module.css';

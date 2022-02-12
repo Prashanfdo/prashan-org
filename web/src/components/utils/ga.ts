@@ -53,7 +53,8 @@ export const gaEventOnClick = (props: EventProps) => () => {
 export function useGAPageTrack() {
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState<string | undefined>();
-  const [scrollDepth, setScrollDepth] = useState(0);
+  // const [scrollDepth, setScrollDepth] = useState(0);
+  const [scrollDepth] = useState(0);
   useEffect(() => {
     const handleRouteChange = (url: string) => {
       gaPageview(url);
