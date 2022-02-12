@@ -1,4 +1,5 @@
 import classnames from 'classnames';
+import { gaEventOnClick } from 'components/utils/ga';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
@@ -15,7 +16,7 @@ function MainLayout({ children }: JSX.ElementChildrenAttribute): JSX.Element {
   return (
     <>
       <div
-        className="bg-red-600 fixed top-0 md:w-52 lg:w-80 w-full md:h-full flex md:flex-col z-10 border-0 md:border-r border-r-[#ebebeb] border-solid left-0"
+        className="bg-white fixed top-0 md:w-52 lg:w-80 w-full md:h-full flex md:flex-col z-10 border-0 md:border-r border-r-[#ebebeb] border-solid left-0"
         style={{
           boxShadow: '0 0 30px rgb(62 68 125 / 8%)',
         }}
@@ -60,6 +61,12 @@ function NavLink({ icon: IconEl, label, href }: NavLinkProps) {
     <>
       <Link passHref href={href}>
         <a
+          onMouseDown={gaEventOnClick({
+            action: 'nav_menu_click',
+            params: {
+              menu_name: label,
+            },
+          })}
           className={classnames(
             'md:hidden flex-auto border-b-2 border-solid bg-white border-[#ebebeb] py-5 tracking-wide hover:tracking-widest transition-all duration-200 font-medium md:mb-3 text-slate-600 hover:text-slate-900 flex flex-col items-center justify-center group',
             {
@@ -77,6 +84,12 @@ function NavLink({ icon: IconEl, label, href }: NavLinkProps) {
       </Link>
       <Link passHref href={href}>
         <a
+          onMouseDown={gaEventOnClick({
+            action: 'nav_menu_click',
+            params: {
+              menu_name: label,
+            },
+          })}
           className={classnames(
             'hidden md:block py-3 tracking-wide hover:tracking-widest transition-all duration-300 font-medium mb-3 text-slate-500 hover:text-slate-900',
             {

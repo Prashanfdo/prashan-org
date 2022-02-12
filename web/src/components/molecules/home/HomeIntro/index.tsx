@@ -1,5 +1,6 @@
 import { GitHub, Linkedin, Mail, MessageCircle, Phone, Twitter } from 'react-feather';
 import type { Icon } from 'react-feather';
+import { gaEventOnClick } from 'components/utils/ga';
 import HomeIntroStyles from './HomeIntro.module.css';
 
 function HomeIntro() {
@@ -49,6 +50,13 @@ function SocialLinks() {
           rel="noreferrer"
           className="mr-4 text-slate-400 hover:text-slate-700 active:text-slate-700 transition-all duration-200 hover:scale-110 active:scale-110"
           title={tooltip}
+          onMouseDown={gaEventOnClick({
+            action: 'contact_link_click',
+            params: {
+              clicked_from_location: 'home_intro',
+              link_type: tooltip,
+            },
+          })}
         >
           <Icon size={24} />
         </a>

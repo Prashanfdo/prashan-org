@@ -8,10 +8,11 @@ export type BlogPost = {
   content: string;
   slug: string;
   data: {
-    draft: boolean;
+    draft: boolean | null;
     title: string;
     date: string;
-    image: string;
+    image: string | null;
+    tags: string[];
   };
 };
 
@@ -23,10 +24,20 @@ export default function getAllPosts() {
       const slug = fileName.replace('.md', '');
       const fileContents = fs.readFileSync(path.join(contentDirectory, fileName), 'utf8');
       const {
-        data: { draft, date, image, title },
+        data: { draft, date, image, title, tags },
         content,
       } = matter(fileContents);
-      const blogPost: BlogPost = { content, data: { draft: !!draft, image, title, date: new Date(date).toISOString() }, slug };
+      const blogPost: BlogPost = {
+        content,
+        data: {
+          draft: !!draft,
+          image: image || null,
+          title,
+          tags: tags ? tags.split(',') : [],
+          date: new Date(date).toISOString(),
+        },
+        slug,
+      };
       return blogPost;
     })
     .filter((i) => i.data.draft !== true)
