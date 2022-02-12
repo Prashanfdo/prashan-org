@@ -1,10 +1,10 @@
 import MainLayout from 'components/layouts/MainLayout';
 import type { BlogPost } from 'components/organisms/blog/posts';
 import getAllPosts from 'components/organisms/blog/posts';
+import PageTitle from 'components/organisms/shared/PageTitle';
 import { format, parseISO } from 'date-fns';
 import hydrate from 'next-mdx-remote/hydrate';
 import renderToString from 'next-mdx-remote/render-to-string';
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import SlugStyles from './Slug.module.css';
@@ -26,9 +26,7 @@ const PortfolioSinglePage = ({ post, readMore }: PortfolioSinglePageProps) => {
 
   return (
     <>
-      <Head>
-        <title>{title} | Blog | Prashan Fernando</title>
-      </Head>
+      <PageTitle>{title}</PageTitle>
       <article className="prose prose-slate prose-sm lg:prose-xl px-6 md:px-10 md:flex md:flex-col md:justify-center pb-24 prose-code:bg-slate-300 prose-code:font-normal prose-code:rounded prose-code:text-slate-600 prose-code:text-xs prose-code:before:text-white prose-code:after:text-white prose-code:px-1 ">
         <Link href="/blog" passHref>
           <a className="text-sm font-semibold text-gray-400 mb-4 decoration-0">Blog</a>

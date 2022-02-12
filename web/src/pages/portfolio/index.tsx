@@ -2,10 +2,12 @@ import MainLayout from 'components/layouts/MainLayout';
 import portfolioData from 'data/portfolio/data';
 import Link from 'next/link';
 import Image from 'next/image';
+import PageTitle from 'components/organisms/shared/PageTitle';
 
 function PortfolioPage() {
   return (
     <>
+      <PageTitle>Portfolio</PageTitle>
       <div className="flex justify-between w-full items-center md:flex-row flex-col">
         <h1 className="text-2xl flex-none font-bold font-display">Portfolio</h1>
       </div>

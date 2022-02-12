@@ -5,6 +5,7 @@ import { format, parseISO } from 'date-fns';
 import Link from 'next/link';
 import getAllPosts from 'components/organisms/blog/posts';
 import { gaEventOnClick } from 'components/utils/ga';
+import PageTitle from 'components/organisms/shared/PageTitle';
 
 export type BlogPageProps = {
   posts: BlogPost[];
@@ -12,6 +13,7 @@ export type BlogPageProps = {
 function BlogPage({ posts }: BlogPageProps) {
   return (
     <>
+      <PageTitle>Blog</PageTitle>
       <div className="flex justify-between w-full items-center md:flex-row flex-col">
         <h1 className="text-2xl flex-none font-bold font-display">Blog</h1>
       </div>

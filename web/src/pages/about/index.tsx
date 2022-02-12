@@ -1,16 +1,20 @@
 import CenteredLayout from 'components/layouts/CenteredLayout';
+import PageTitle from 'components/organisms/shared/PageTitle';
 import React from 'react';
 
 function AboutPage() {
   return (
-    <div className="flex flex-col md:flex-row items-center md:items-start px-8 md:px-0">
-      <div className="flex-auto">
-        <h1 className="font-bold text-2xl mt-4 md:mt-0 text-center md:text-left mb-6 p-0 text-black align-baseline">
-          Prashan Fernando & Full Stack Developer
-        </h1>
-        <InfoGrid />
+    <>
+      <PageTitle>About</PageTitle>
+      <div className="flex flex-col md:flex-row items-center md:items-start px-8 md:px-0">
+        <div className="flex-auto">
+          <h1 className="font-bold text-2xl mt-4 md:mt-0 text-center md:text-left mb-6 p-0 text-black align-baseline">
+            Prashan Fernando & Full Stack Developer
+          </h1>
+          <InfoGrid />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
