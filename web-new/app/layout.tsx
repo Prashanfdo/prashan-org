@@ -3,8 +3,10 @@ import Head from 'next/head';
 import Script from 'next/script';
 import './globals.css';
 import Navbar from './NavBar';
+import GAEl from './_shared/utils/GAEl';
 
 const interFont = Inter({
+  subsets: ['latin'],
   style: 'normal',
   preload: true,
 });
@@ -24,7 +26,7 @@ export default function RootLayout({ children }) {
           <Script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
         )}
       </Head>
-      <body className="md:pl-[300px] md:pt-0 bg-[#f8f8f8]">
+      <body className="md:pl-[230px] lg:pl-[300px] md:pt-0 bg-[#f8f8f8]">
         {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS && (
           <Script
             id="google-analytics-embed"
@@ -40,6 +42,7 @@ export default function RootLayout({ children }) {
             }}
           />
         )}
+        <GAEl />
         <Navbar />
         {children}
         <div className="fixed top-0 left-0 bg-black text-yellow-300 z-50 text-sm px-1 hover:hidden">

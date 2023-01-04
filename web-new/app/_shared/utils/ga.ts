@@ -1,8 +1,6 @@
-import { useRouter } from 'next/router';
-import {
-  useEffect,
-  //  useState
-} from 'react';
+'use client';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 type EventProps =
   | {
@@ -42,54 +40,51 @@ export const gaPageview = (url: string) => {
 };
 
 export const gaEvent = ({ action, params }: EventProps) => {
-  window?.gtag?.('event', action, params);
-  // eslint-disable-next-line no-console
-  console.info(
-    `GA Event: ${action} => ${Object.entries(params)
-      .map(([key, value]) => `${key}: ${value}`)
-      .join(', ')}`,
-  );
+  if (process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS) {
+    window?.gtag?.('event', action, params);
+  } else {
+    // eslint-disable-next-line no-console
+    console.info(
+      `GA Event: ${action} => ${Object.entries(params)
+        .map(([key, value]) => `${key}: ${value}`)
+        .join(', ')}`,
+    );
+  }
 };
 export const gaEventOnClick = (props: EventProps) => () => {
   gaEvent(props);
 };
-// export function useGAPageTrack() {
-//   const router = useRouter();
-//   const [currentPage, setCurrentPage] = useState<string | undefined>();
-//   // const [scrollDepth, setScrollDepth] = useState(0);
-//   const [scrollDepth] = useState(0);
-//   useEffect(() => {
-//     const handleRouteChange = (url: string) => {
-//       gaPageview(url);
-//       setCurrentPage(url);
-//     };
-//     router.events.on('routeChangeComplete', handleRouteChange);
-//     return () => {
-//       router.events.off('routeChangeComplete', handleRouteChange);
-//     };
-//   }, [router.events]);
+export function useGAPageTrack() {
+  const router = useRouter();
+  const pathname = usePathname();
+  const [scrollDepth, setScrollDepth] = useState(0);
+  useEffect(() => {
+    gaPageview(pathname);
+  }, [pathname]);
 
-//   // track page scrolls rounded to 25% of page height
-//   useEffect(() => {
-//     const onScroll = () => {
-//       // setScrollDepth(Math.round(((window.pageYOffset + window.innerHeight) * 100) / (document.body.scrollHeight * 25)) * 25);
-//     };
-//     window.removeEventListener('scroll', onScroll);
-//     window.addEventListener('scroll', onScroll, { passive: true });
-//     return () => window.removeEventListener('scroll', onScroll);
-//   }, [currentPage]);
-//   useEffect(() => {
-//     if (currentPage && scrollDepth > 0) {
-//       gaEvent({
-//         action: 'page_scroll',
-//         params: {
-//           page_path: currentPage,
-//           scroll_depth: scrollDepth,
-//         },
-//       });
-//     }
-//   }, [currentPage, scrollDepth]);
-// }
+  // track page scrolls rounded to 25% of page height
+  useEffect(() => {
+    const onScroll = () => {
+      setScrollDepth(Math.round(((window.pageYOffset + window.innerHeight) * 100) / (document.body.scrollHeight * 25)) * 25);
+    };
+    onScroll();
+    window.removeEventListener('scroll', onScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (pathname && scrollDepth > 0) {
+      gaEvent({
+        action: 'page_scroll',
+        params: {
+          page_path: pathname,
+          scroll_depth: scrollDepth,
+        },
+      });
+    }
+  }, [pathname, scrollDepth]);
+}
 
 declare const window: Window &
   typeof globalThis & {

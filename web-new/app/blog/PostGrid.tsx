@@ -4,7 +4,6 @@ import Link from 'next/link';
 // import { useRouter } from 'next/router';
 
 type Post = {
-  content: string;
   data: {
     draft: boolean;
     image: string;

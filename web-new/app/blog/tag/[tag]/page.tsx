@@ -1,16 +1,27 @@
 import { format, parseISO } from 'date-fns';
 import Image from 'next/image';
 import Link from 'next/link';
-import postData from '../../data/blog/posts.json';
+import postData from '../../../../data/blog/posts.json';
 
-export default async function Page() {
+type PageProps = {
+  params: { tag: string };
+};
+export default async function Page({ params }: PageProps) {
+  const posts = postData.data?.filter((post) => post.data.tags.includes(params.tag));
+  console.log(
+    params.tag,
+    postData.data?.map((post) => post.data.tags),
+  );
   return (
     <div className="grid justify-center content-around min-h-screen pb-[80px] pt-[100px] px-[8vw] container">
-      <div className="flex justify-between w-full items-center md:flex-row flex-col">
-        <h1 className="text-2xl flex-none font-bold font-display">Blog</h1>
+      <div className="justify-between w-full items-center flex-col">
+        <Link href="/blog" className="text-sm font-semibold text-gray-400 mb-4 decoration-0 no-underline">
+          {'<'} Blog
+        </Link>
+        <h1 className="text-2xl flex-none font-bold font-display">Tag: {params.tag}</h1>
       </div>
       <div className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-4 mt-12 pb-16">
-        {postData.data?.map((post, index) => (
+        {posts?.map((post, index) => (
           <Link
             href={`/blog/${post.slug}`}
             key={index}

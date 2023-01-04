@@ -9,7 +9,6 @@ function Navbar() {
   const navLinks: [Icon, string, string][] = [
     [Home, 'Home', '/'],
     [User, 'About', '/about'],
-    [Tv, 'Portfolio', '/portfolio'],
     [Book, 'Blog', '/blog'],
     [Mail, 'Contact', '/contact'],
   ];
