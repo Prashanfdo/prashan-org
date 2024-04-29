@@ -16,15 +16,8 @@ export default async function Page() {
           {postData.data?.map((post, index) => (
             <Link href={`/blog/${post.slug}`} key={index} className="block w-full h-full space-y-2">
               <h2 className="text-lg font-medium tracking-normal">{post.data.title}</h2>
-              <div className="relative w-full overflow-hidden rounded-md h-52 lg:h-60">
-                <Image
-                  fill
-                  src={post.data.image}
-                  alt={post.data.title}
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  priority={index < 3}
-                />
+              <div className="text-sm text-neutral-600 dark:text-neutral-400">
+                <span>{format(parseISO(post.data.date), 'MMMM do, uuu')}</span>
               </div>
             </Link>
           ))}

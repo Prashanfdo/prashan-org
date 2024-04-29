@@ -2,6 +2,14 @@ import { format, parseISO } from 'date-fns';
 import Link from 'next/link';
 import postData from '../../data/blog/posts.json';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Prashan Fernando',
+  description:
+    "I build web applications using modern technologies like React, .Net, and Node.js. I currently work at VaultData, a Birmingham AI/Machine Learning Startup, where I help build and maintain the company's core product.",
+};
+
 type PageProps = {};
 export default function Page({}: PageProps) {
   return (
