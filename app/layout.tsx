@@ -5,6 +5,7 @@ import './globals.css';
 import Navbar from './NavBar';
 import GAEl from './_shared/utils/GAEl';
 import { HydrationOverlay } from '@builder.io/react-hydration-overlay';
+import { Analytics } from '@vercel/analytics/react';
 
 const interFont = Inter({
   subsets: ['latin'],
@@ -24,11 +25,7 @@ export default function RootLayout({ children }) {
       <html lang="en" className={`${interFont.className} ${dmFont.variable}`}>
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-          <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
-          <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
-          <link rel="manifest" href="/site.webmanifest" />
-          <meta name="theme-color" content="#F8F8F8" />
+          <meta name="theme-color" content="#FFFFFF" />
           {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS && (
             <Script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
           )}
@@ -55,6 +52,7 @@ export default function RootLayout({ children }) {
           <p className="hidden px-4 py-4 text-xs italic text-center md:block text-slate-500">
             &copy; {new Date().getFullYear()} Prashan Fernando. All rights reserved.
           </p>
+          <Analytics />
         </body>
       </html>
     </HydrationOverlay>

@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact | Prashan Fernando',
+  description:
+    'Feel free to reach out to me. I&apos;m always happy to chat about web development, software engineering, or anything else related. You can contact me via LinkedIn.',
+};
+
 export default function Page() {
   return (
     <div>

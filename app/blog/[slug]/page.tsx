@@ -1,10 +1,30 @@
 import { format, parseISO } from 'date-fns';
 import renderToString from 'next-mdx-remote/render-to-string';
-import Image from 'next/image';
 import Link from 'next/link';
 
+import type { Metadata, ResolvingMetadata } from 'next';
 import postData from '../../../data/blog/posts.json';
 import PostContent from './PostContent';
+
+type Post = (typeof postData.data)[0];
+
+export async function generateMetadata({ params }: PageProps, parent: ResolvingMetadata): Promise<Metadata> {
+  const postIndex = postData.data?.findIndex((post) => post.slug === params.slug);
+
+  if (postIndex < 0) {
+    return {
+      title: 'Not Found',
+      description: 'Not Found',
+    };
+  }
+
+  const post = postData.data?.[postIndex];
+
+  return {
+    title: `${post.data?.title} - Blog | Prashan Fernando`,
+    description: post.data?.title,
+  };
+}
 
 type PageProps = {
   params: { slug: string };
@@ -47,9 +67,9 @@ export default async function Page({ params }: PageProps) {
 }
 
 type ReadMorePostProps = {
-  post: any;
+  post: Post;
 };
-const ReadMorePost: React.FC<ReadMorePostProps> = ({ post }: ReadMorePostProps) => {
+function ReadMorePost({ post }: ReadMorePostProps) {
   if (!post.data.image) {
     return null;
   }
@@ -58,4 +78,4 @@ const ReadMorePost: React.FC<ReadMorePostProps> = ({ post }: ReadMorePostProps) 
       <h4 className="text-sm group-hover:underline">{post.data.title}</h4>
     </Link>
   );
-};
+}

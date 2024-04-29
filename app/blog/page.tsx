@@ -1,7 +1,14 @@
 import { format, parseISO } from 'date-fns';
 import Link from 'next/link';
 import postData from '../../data/blog/posts.json';
-import Image from 'next/image';
+
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Blog | Prashan Fernando',
+  description:
+    'Welcome to my blog! I write about web development, software engineering, and other topics that interest me. If you have any questions or comments, feel free to reach out to me 🚀',
+};
 
 export default async function Page() {
   return (
