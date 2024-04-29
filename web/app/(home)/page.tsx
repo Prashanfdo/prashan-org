@@ -1,32 +1,31 @@
-import HomeStyles from './home.module.css';
-
+import { format, parseISO } from 'date-fns';
 import Link from 'next/link';
-import SocialLinks from './SocialLinks';
+import postData from '../../data/blog/posts.json';
 
-export default function Page() {
+type PageProps = {};
+export default function Page({}: PageProps) {
   return (
-    <div className="flex flex-col px-[8vw] justify-center items-center xl:grid  xl:gap-3 xl:align-middle xl:content-around min-h-screen pb-[80px] pt-[68px] sm:pt-[98px] md:pt-[68px]  xl:grid-cols-2 grid-rows-2 xl:grid-flow-row max-w-[1300px] xl:mx-auto">
-      <div
-        className={`w-[45vw] h-[45vw] md:w-[clamp(100px,_35vw,_330px)] md:h-[clamp(100px,_35vw,_330px)] xl:row-span-2 xl:justify-self-center bg-cover bg-center grayscale-[90%] transition-all duration-200 hover:grayscale-[50%] ${HomeStyles.animated_bubble}`}
-        style={{
-          backgroundImage: 'url(/assets/images/prashan.jpg)',
-        }}
-      />
-      <h3 className="pt-[4vh] pb-[4vh] xl:col-span-1 xl:self-end font-display text-[10vw] md:text-[7vw] lg:text-6xl text-center md:text-left font-semibold leading-[1.05em]">
-        Prashan <br /> <span className="font-light">Fernando</span>
-      </h3>
+    <div>
+      <h1 className="mb-6 text-2xl font-medium tracking-tighter">hey, I&apos;m Prashan Fernando 👋</h1>
+      <p>
+        I&apos;m a full stack developer based in London, UK. I build web applications using modern technologies like React, .Net,
+        and Node.js. I currently work at VaultData, a Birmingham AI/Machine Learning Startup, where I help build and maintain the
+        company&apos;s core product.
+      </p>
 
-      <div className="xl:col-span-1 xl:self-start">
-        <p className="text-base xl:text-lg text-slate-500 mb-6 text-center xl:text-left">
-          Fullstack Developer with over {new Date().getFullYear() - 2010}+ years of experience in designing, developing, and
-          deploying scalable, secure, and highly available applications. I am also a Certified Azure Architect and have a passion
-          for software development. <br />
-          My expertise includes <span className="font-medium">React, Node, .Net, and Azure Cloud technologies</span>.{' '}
-          <Link href="/about" className="whitespace-nowrap">
-            Read more {'→'}{' '}
+      <h2 className="my-6 text-lg font-medium tracking-normal">Latest Blog Posts ✍️</h2>
+      <div className="my-4 space-y-4">
+        {postData.data?.slice(0, 3).map((post, index) => (
+          <Link href={`/blog/${post.slug}`} key={index} className="block w-full h-full">
+            <h3 className="font-medium tracking-normal">{post.data.title}</h3>
+            <div>
+              <span className="text-xs font-bold text-slate-400">{format(parseISO(post.data.date), 'MMMM do, uuu')}</span>
+            </div>
           </Link>
-        </p>
-        <SocialLinks />
+        ))}
+        <Link href={`/blog`} className="block w-full h-full text-sm">
+          See all blog posts →
+        </Link>
       </div>
     </div>
   );

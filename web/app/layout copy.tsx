@@ -1,4 +1,4 @@
-import { DM_Mono, Inter } from 'next/font/google';
+import { Montserrat, Inter } from 'next/font/google';
 import Head from 'next/head';
 import Script from 'next/script';
 import './globals.css';
@@ -12,18 +12,12 @@ const interFont = Inter({
   preload: true,
 });
 
-const dmFont = DM_Mono({
-  weight: ['300'],
-  subsets: ['latin'],
-  variable: '--font-dm-mono',
-});
-
 export default function RootLayout({ children }) {
   return (
     <HydrationOverlay>
-      <html lang="en" className={`${interFont.className} ${dmFont.variable}`}>
+      <html lang="en" className={interFont.className}>
         <Head>
-          <title>Prashan Fernando | Full Stack Developer</title>
+          <title>Prashan Fernando</title>
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
@@ -34,7 +28,7 @@ export default function RootLayout({ children }) {
             <Script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
           )}
         </Head>
-        <body className="max-w-2xl m-auto mx-4 mt-8 mb-40 overflow-y-scroll antialiased bg-white md:flex-row lg:mx-auto vsc-initialized lg:max-w-2xl">
+        <body className="md:pl-[230px] lg:pl-[300px] md:pt-0 bg-[#f8f8f8]">
           {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS && (
             <Script
               id="google-analytics-embed"
@@ -53,9 +47,16 @@ export default function RootLayout({ children }) {
           <GAEl />
           <Navbar />
           {children}
-          <p className="hidden px-4 py-4 text-xs italic text-center md:block text-slate-500">
-            &copy; {new Date().getFullYear()} Prashan Fernando. All rights reserved.
-          </p>
+          {process.env.localDev && (
+            <div className="fixed top-0 left-0 z-50 px-1 text-sm text-yellow-300 bg-black hover:hidden">
+              <span className="sm:hidden">xs</span>
+              <span className="hidden sm:block md:hidden">sm</span>
+              <span className="hidden md:block lg:hidden">md</span>
+              <span className="hidden lg:block xl:hidden">lg</span>
+              <span className="hidden xl:block 2xl:hidden">xl</span>
+              <span className="hidden 2xl:block">2xl</span>
+            </div>
+          )}
         </body>
       </html>
     </HydrationOverlay>
