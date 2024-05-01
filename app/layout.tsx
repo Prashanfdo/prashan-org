@@ -26,6 +26,7 @@ export default function RootLayout({ children }) {
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <meta name="theme-color" content="#FFFFFF" />
+          <link rel="icon" href="/icon.ico" sizes="any" />
           {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS && (
             <Script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
           )}
